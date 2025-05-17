@@ -1,4 +1,6 @@
-import type React from "react"
+'use client'
+
+import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Lightbulb, Layers, Scale } from "lucide-react"
 import Image from "next/image"
@@ -95,18 +97,25 @@ function UspCard({ icon, title, description }: { icon: React.ReactNode; title: s
 function TeamMember({ name, role, description }: { name: string; role: string; description: string }) {
   // Convert name to lowercase, replace spaces with hyphens, and remove periods
   const imageName = name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')
+  const [imgSrc, setImgSrc] = React.useState(`/images/team/${imageName}.jpg`)
   
   return (
     <Card className="bg-[#1A2A4A] border-none">
       <CardContent className="p-6 text-center">
         <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden relative">
           <Image
-            src={`/images/team/${imageName}.JPG`}
+            src={imgSrc}
             alt={name}
             fill
             className="object-cover"
             sizes="(max-width: 96px) 100vw, 96px"
             priority={name === "Maxwell B. Antwi"}
+            onError={() => {
+              // If lowercase jpg fails, try uppercase JPG
+              if (imgSrc.endsWith('.jpg')) {
+                setImgSrc(imgSrc.replace('.jpg', '.JPG'))
+              }
+            }}
           />
         </div>
         <h4 className="text-xl font-bold text-white">{name}</h4>
