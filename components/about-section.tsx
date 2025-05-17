@@ -1,6 +1,7 @@
 import type React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Lightbulb, Layers, Scale } from "lucide-react"
+import Image from "next/image"
 
 export function AboutSection() {
   return (
@@ -92,25 +93,21 @@ function UspCard({ icon, title, description }: { icon: React.ReactNode; title: s
 }
 
 function TeamMember({ name, role, description }: { name: string; role: string; description: string }) {
+  // Convert name to lowercase, replace spaces with hyphens, and remove periods
+  const imageName = name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')
+  
   return (
     <Card className="bg-[#1A2A4A] border-none">
       <CardContent className="p-6 text-center">
-        <div className="w-24 h-24 bg-[#0F1A2E] rounded-full mx-auto mb-4 flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-[#009688]"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
+        <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden relative">
+          <Image
+            src={`/images/team/${imageName}.JPG`}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 96px) 100vw, 96px"
+            priority={name === "Maxwell B. Antwi"}
+          />
         </div>
         <h4 className="text-xl font-bold text-white">{name}</h4>
         <p className="text-[#FF5722] mb-2">{role}</p>
