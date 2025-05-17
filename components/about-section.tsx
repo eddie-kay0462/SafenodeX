@@ -63,12 +63,12 @@ export function AboutSection() {
               description="Oversees product security and database integrity."
             />
             <TeamMember
-              name="Co-Founder 1"
+              name="Edward Ofosu Mensah"
               role="Mobile/Web Dev Lead"
               description="Focuses on front-end and back-end delivery for apps."
             />
             <TeamMember
-              name="Co-Founder 2"
+              name="Evans Kumi"
               role="AI & Automation Lead"
               description="Leads the design of smart features and agents."
             />
