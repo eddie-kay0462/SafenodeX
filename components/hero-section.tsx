@@ -23,7 +23,7 @@ export function HeroSection() {
 
           <AnimatedSection delay={300}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#FF5722] hover:bg-[#E64A19] text-white">
+              <Button asChild className="bg-[#FF5722] hover:bg-[#E64A19] hover:border-2 hover:border-[#FF5722] hover:shadow-[0_0_8px_2px_#FF5722] text-white">
                 <Link href="#contact">Get Started</Link>
               </Button>
               <Button
