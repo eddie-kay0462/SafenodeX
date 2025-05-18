@@ -8,7 +8,7 @@ export function AutomationSection() {
           <CardContent className="p-6 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Auto-Attmate</h2>
+                <h2 className="text-3xl font-bold mb-4">Automate</h2>
                 <p className="text-lg mb-2">Efficiency</p>
                 <p className="text-gray-700">
                   Efficiency and continuous improvement through intelligent automation. Our solutions adapt to your
