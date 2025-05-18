@@ -18,7 +18,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative h-10 w-10">
-              <img src="/SafenodeXlogo.png" alt="SafenodeX Logo" className="h-10 w-10" />
+              <img src="/SafenodeXlogo.png" alt="SafenodeX's Logo" className="h-10 w-10" />
             </div>
             <span className="text-xl font-bold text-white">SafenodeX</span>
           </Link>
