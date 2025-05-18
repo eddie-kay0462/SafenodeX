@@ -40,7 +40,7 @@ export function Navbar() {
           <Link href="#about" className="text-sm font-medium text-white hover:text-[#FF5722] transition-colors">
             About
           </Link>
-          <Button asChild className="bg-[#009688] hover:bg-[#00796B] text-white">
+          <Button asChild variant="outline" className="border-[#10CFC9] text-[#10CFC9] bg-[#192233] transition-all duration-200 hover:bg-[#192233] hover:text-[#10CFC9] hover:border-2 hover:border-[#10CFC9] hover:shadow-[0_0_8px_2px_#10CFC9]">
             <Link href="#contact">Contact</Link>
           </Button>
         </nav>
@@ -84,7 +84,7 @@ export function Navbar() {
               About
             </Link>
             <div className="px-4 pt-2">
-              <Button asChild className="w-full bg-[#009688] hover:bg-[#00796B] text-white">
+              <Button asChild className="w-full border-[#10CFC9] text-[#10CFC9] bg-[#192233] transition-all duration-200 hover:bg-[#192233] hover:text-[#10CFC9] hover:border-2 hover:border-[#10CFC9] hover:shadow-[0_0_8px_2px_#10CFC9]">
                 <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </Link>
