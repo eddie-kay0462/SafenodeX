@@ -1,7 +1,17 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#14213D]/10 bg-[#14213D] backdrop-blur">
       <div className="container flex h-20 items-center justify-between">
@@ -15,7 +25,12 @@ export function Navbar() {
             <span className="text-xl font-bold text-white">SafenodeX</span>
           </Link>
         </div>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
+          <Link href="/" className="text-sm font-medium text-white hover:text-[#FF5722] transition-colors">
+            Home
+          </Link>
           <Link href="#solutions" className="text-sm font-medium text-white hover:text-[#FF5722] transition-colors">
             Solutions
           </Link>
@@ -29,25 +44,55 @@ export function Navbar() {
             <Link href="#contact">Contact</Link>
           </Button>
         </nav>
-        <Button variant="ghost" size="icon" className="md:hidden text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
-          >
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-          </svg>
+
+        {/* Mobile Menu Button */}
+        <Button variant="ghost" size="icon" className="md:hidden text-white" onClick={toggleMenu}>
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-[#14213D] border-t border-[#14213D]/10 py-4">
+          <nav className="container flex flex-col space-y-4">
+            <Link
+              href="/"
+              className="text-white hover:text-[#FF5722] transition-colors px-4 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="#solutions"
+              className="text-white hover:text-[#FF5722] transition-colors px-4 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Solutions
+            </Link>
+            <Link
+              href="#industries"
+              className="text-white hover:text-[#FF5722] transition-colors px-4 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Industries
+            </Link>
+            <Link
+              href="#about"
+              className="text-white hover:text-[#FF5722] transition-colors px-4 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <div className="px-4 pt-2">
+              <Button asChild className="w-full bg-[#009688] hover:bg-[#00796B] text-white">
+                <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  Contact
+                </Link>
+              </Button>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
