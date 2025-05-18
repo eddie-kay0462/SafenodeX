@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "SafenodeX - Smart. Secure. Seamless.",
   description:
     "Next-generation software development focused on building smart, secure, and intelligent digital solutions for businesses.",
-  generator: 'v0.dev'
+  creator: 'Edward'
 }
 
 export default function RootLayout({
