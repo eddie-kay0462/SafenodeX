@@ -20,7 +20,7 @@ export function ContactSection() {
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-[#FF5722] mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold mb-1">Email Us</h3>
+                    <h3 className="text-lg font-bold mb-1 text-white">Email Us</h3>
                     <p className="text-gray-300">info@safenodex.com</p>
                     <p className="text-gray-300">support@safenodex.com</p>
                   </div>
@@ -32,7 +32,7 @@ export function ContactSection() {
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-[#FF5722] mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold mb-1">Call Us</h3>
+                    <h3 className="text-lg font-bold mb-1 text-white">Call Us</h3>
                     <p className="text-gray-300">+233 50 123 4567</p>
                     <p className="text-gray-300">+233 24 987 6543</p>
                   </div>
@@ -44,7 +44,7 @@ export function ContactSection() {
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-[#FF5722] mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold mb-1">Visit Us</h3>
+                    <h3 className="text-lg font-bold mb-1 text-white">Visit Us</h3>
                     <p className="text-gray-300">
                       123 Tech Hub, Innovation Street
                       <br />

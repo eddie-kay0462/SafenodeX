@@ -93,7 +93,7 @@ export function ContactForm() {
   return (
     <Card className="bg-[#1A2A4A] border-none">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Send Us a Message</CardTitle>
+        <CardTitle className="text-2xl font-bold text-white">Send Us a Message</CardTitle>
       </CardHeader>
       <CardContent>
         {formState.success ? (
