@@ -97,7 +97,16 @@ function UspCard({ icon, title, description }: { icon: React.ReactNode; title: s
 function TeamMember({ name, role, description }: { name: string; role: string; description: string }) {
   // Convert name to lowercase, replace spaces with hyphens, and remove periods
   const imageName = name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')
-  const [imgSrc, setImgSrc] = React.useState(`/images/team/${imageName}.JPG`)
+  
+  // Special handling for Evans Kumi's image
+  const getInitialImageSrc = () => {
+    if (name === "Evans Kumi") {
+      return "/images/team/Evans.jpg"
+    }
+    return `/images/team/${imageName}.JPG`
+  }
+  
+  const [imgSrc, setImgSrc] = React.useState(getInitialImageSrc())
   
   return (
     <Card className="bg-[#1A2A4A] border-none">
